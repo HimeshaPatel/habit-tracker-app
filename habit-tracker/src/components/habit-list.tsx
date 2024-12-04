@@ -4,7 +4,7 @@ import { RootState, AppDispatch } from '../store/store'
 import { Box, Button, Grid,  Paper, Typography } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
 import DeleteIcon  from '@mui/icons-material/Delete'
-import { Habit, toggleHabit } from '../store/habit-slice'
+import { Habit, removeHabit, toggleHabit } from '../store/habit-slice'
 import LinearProgress from '@mui/material/LinearProgress';
 
 
@@ -47,6 +47,7 @@ const HabitList:React.FC = () => {
                         >Mark Complete</Button>    
                         <Button variant='outlined' color={"error"}
                         startIcon={<DeleteIcon />}
+                        onClick={() => dispatch(removeHabit(habit.id))}
                         >Remove</Button>    
                     </Box>
 
